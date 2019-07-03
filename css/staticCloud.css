@@ -1,0 +1,114 @@
+#staticCloudDiv,  #alternativeStaticCloud{
+    list-style-type: none;
+    width: 80%;
+	margin: 0% 10% 0% 10%;
+	word-wrap: break-word;
+	text-align: center;
+}
+/* .cloud li:nth-of-type(3n + 1) { */
+    /* font-size: 1.25em; */
+/* } */
+/* .cloud li:nth-of-type(4n+3) { */
+    /* font-size: 1.5em; */
+/* } */
+/* .cloud li:nth-of-type(5n - 3) { */
+    /* font-size: 1em; */
+/* } */
+#staticCloudDiv a, #alternativeStaticCloud a{
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	padding: 0% 0.5% 0% 0.5%;
+	margin: 0% 0.5% 0% 0.5%;
+	font-family:Arial;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.tagc1{
+	background-color:#cc235e;
+	color:#ffffff;	
+}
+.tagc1:hover {
+	background-color:#a81e4e;
+}
+.tagc2{
+	background-color:#F16E50;
+	color:#ffffff;
+}
+.tagc2:hover {
+	background-color:#cc5d43;
+}
+.tagc3{
+	background-color:#006633;
+	color:#ffffff;
+}
+.tagc3:hover {
+	background-color:#024d27;
+}
+.tagc4{
+	background-color:#44c767;
+	color:#ffffff;
+}
+.tagc4:hover {
+	background-color:#34994f;
+}
+.tagc5{
+	background-color:#2d72e0;
+	color:#ffffff;
+}
+.tagc5:hover {
+	background-color:#275eb8;
+}
+.tagc6{
+	background-color:#d9e319;
+	color:#ffffff;
+	
+}
+.tagc6:hover {
+	background-color:#b0b814;
+}
+.tagc7{
+	background-color:#19e38f;
+	color:black;
+}
+.tagc7:hover {
+	background-color:#15bf78;
+}
+.tagc8{
+	background-color:#b52289;
+	color:black;
+}
+.tagc8:hover {
+	background-color:#7d165e;
+}
+
+
+#staticCloud button:hover{
+	color:#fff;
+	background:#0099ff;
+}
+
+.staticTag {
+  background-color: Crimson;  
+  border-radius: 5px;
+  color: white;
+  padding: .5em;
+  text-decoration: none;
+}
+
+.staticTag:focus,
+.staticTag:hover {
+  background-color: FireBrick;
+  color: White;
+}
+
+.staticTag {
+  display: none;
+  margin: 1em 0;
+}
+
+.staticTag.active,
+.no-js .content {
+  display: block;
+}
+

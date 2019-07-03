@@ -35,6 +35,11 @@ class TagGroupsController extends BasicController
         echo $json = json_encode($tagGroupsInfo, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
     }
 
+    public function getGroupByName($groupName){
+        $tagGroupInfo = $this->model->getTagGroupByName($groupName);
+        echo $json = json_encode($tagGroupInfo, JSON_UNESCAPED_UNICODE);
+    }
+
     public function insertTagGroup($tagDataJson){
         $phpObject = $this->decodeIfJson($tagDataJson);
         if(!$this->validateInput($phpObject)){

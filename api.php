@@ -1,7 +1,5 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
-header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
 include_once  "./api/UsersController.php";
 include_once  "./api/TagGroupsController.php";
 include_once  "./api/TagsController.php";
@@ -26,6 +24,10 @@ if($method == 'GET'){
             $groupId = substr($url, strrpos($url, '/') + 1);
             $tagsController->getTagsForGroup($groupId);
             break;
+        case (preg_match( '/\/phpAPI\/api.php\/tagGroupByName\/.*/', $url) ? true : false) :
+            $name = substr($url, strrpos($url, '/') + 1);
+            $tagGroupsController->getGroupByName($name);
+            break;
 
         case (preg_match( '/\/phpAPI\/api.php\/tagGroups\/.*/', $url) ? true : false) :
             $userId = substr($url, strrpos($url, '/') + 1);
@@ -42,7 +44,7 @@ if($method == 'GET'){
             $inputData = file_get_contents('php://input', true);
             $usersController->registerUser($inputData);
             break;
-        case $baseUrl . "insertTag":
+        case $baseUrl . "addTag":
             $inputData = file_get_contents('php://input', true);
             $tagsController->insertTag($inputData);
             break;
@@ -97,11 +99,7 @@ if($method == 'GET'){
             echo "Path not found! Check path name and method";
             break;
     }
-}elseif($method == 'OPTIONS'){
-    http_response_code(404);
-    echo "Path not found! Check path name and method";
-    return;
-} else{
+}else{
     http_response_code(404);
     echo "Path not found! Check path name and method";
     return;
