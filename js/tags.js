@@ -96,7 +96,7 @@ function buildAlternativeStaticCloud(){
 			var cloning = tagsRow.cloneNode(true);
 		}
 		let tag = itemArray.pop();
-		if(itemCounter < randomItemsPerRow && itemArray.length >0){
+		if(itemCounter < randomItemsPerRow && itemArray.length >=0){
 			let tagAnchor = createAnchorElement(tag, true);
 			cloning.appendChild(tagAnchor);
 			itemCounter++;

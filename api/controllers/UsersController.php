@@ -1,5 +1,5 @@
 <?php
-include_once "UsersModel.php";
+include_once dirname(__DIR__)."/models/UsersModel.php";
 include_once "BasicController.php";
 
 class UsersController extends BasicController{

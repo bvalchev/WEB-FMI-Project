@@ -1,5 +1,5 @@
 <?php
-include_once "TagsModel.php";
+include_once dirname(__DIR__)."/models/TagsModel.php";
 include_once "TagGroupsController.php";
 
 class TagsController extends BasicController

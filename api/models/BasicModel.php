@@ -1,5 +1,5 @@
 <?php
-include_once "DB.php";
+include_once dirname(__DIR__)."/DB.php";
 class BasicModel{
     private $connection;
     private $table;

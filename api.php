@@ -1,8 +1,8 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-include_once  "./api/UsersController.php";
-include_once  "./api/TagGroupsController.php";
-include_once  "./api/TagsController.php";
+include_once  "./api/controllers/UsersController.php";
+include_once  "./api/controllers/TagGroupsController.php";
+include_once  "./api/controllers/TagsController.php";
 
 $url = $_SERVER['REQUEST_URI'];
 $method = $_SERVER['REQUEST_METHOD'];
