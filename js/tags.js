@@ -9,18 +9,18 @@ function getTagsAsync(){
 	tagsArray = [];
 	clearTableAndLists();
 	let groupId = getGroupId();
-	tagCRUD.getAsync("http://localhost/phpAPI/api.php/tags/" + groupId, appendTagWhereNeeded, buildAlternativeStaticCloud);
+	tagCRUD.getAsync(basePath + "/api.php/tags/" + groupId, appendTagWhereNeeded, buildAlternativeStaticCloud);
 	//buildAlternativeStaticCloud();		
 }
 function addTag(json){
-	tagCRUD.addAsync("http://localhost/phpAPI/api.php/addTag", json, getTagsAsync);
+	tagCRUD.addAsync(basePath + "/api.php/addTag", json, getTagsAsync);
 	
 }
 function updateTag(json){
-	tagCRUD.updateAsync("http://localhost/phpAPI/api.php/updateTag", json, getTagsAsync);
+	tagCRUD.updateAsync(basePath + "/api.php/updateTag", json, getTagsAsync);
 }
 function deleteTag(id){
-	tagCRUD.deleteAsync("http://localhost/phpAPI/api.php/deleteTag/" + id, getTagsAsync);
+	tagCRUD.deleteAsync(basePath + "/api.php/deleteTag/" + id, getTagsAsync);
 }
 /* ------------END OF API CALLS-------------*/
 
@@ -100,6 +100,9 @@ function buildAlternativeStaticCloud(){
 			let tagAnchor = createAnchorElement(tag, true);
 			cloning.appendChild(tagAnchor);
 			itemCounter++;
+			if(itemArray.length == 0){
+				alternativeStaticCloud.appendChild(cloning)
+			}
 		}else{
 			alternativeStaticCloud.appendChild(cloning);
 			itemCounter = 0;
@@ -136,6 +139,7 @@ function createAnchorElement(tag, shouldHaveClass){
 	let textNode = document.createTextNode(tag.tagName);
 	anchorElement.appendChild(textNode); 
 	anchorElement.href = tag.link;
+	anchorElement.target="_blank";
 	if(shouldHaveClass){
 		let randomClassNum = Math.floor(Math.random() * 6) + 1;   
 		anchorElement.classList.add("tagc" + randomClassNum);

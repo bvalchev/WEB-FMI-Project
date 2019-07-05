@@ -8,11 +8,8 @@
 	<link href="./css/modal.css" rel="stylesheet"> 
 	<link href="./css/index.css" rel="stylesheet"> 
 	<link href="./css/staticCloud.css" rel="stylesheet"> 
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  <script src="./dom-to-image-master/dist/dom-to-image.min.js"></script>
+   <script src="./third-party/jQuery-3.4.1/jQuery.js"></script>
+  <script src="./third-party/dom-to-image-master/dist/dom-to-image.min.js"></script>
   
   </head>
 
@@ -204,11 +201,11 @@
 	
 		
   </body>
+	<script src="./js/CRUD.mjs"></script>
+	<script src="./js/tagGroups.js"></script>
+	<script src="./js/tags.js"></script>
 	<script src="./js/rotatingCloud.js"></script>
 	<script src="./js/sphereCloud.js"></script>
-	<script src="./js/CRUD.mjs"></script>
 	<!--script src="tagClouds2.js"></script-->
-	<script src="./js/tags.js"></script>
-	<script src="./js/tagGroups.js"></script>
 	<script src="./js/saveCloud.js"></script>
 </html>

@@ -1,25 +1,27 @@
 
 let tagGroupsCRUD = new CRUD();
+let basePath = "http://localhost/62051_project_final"
+
 $(document).ready(getTagGroupsForUserAsync(4))
 $(document).ready(buildGroupModals());
 
 function getTagGroupsForUserAsync(userId){
 	clearList();
-	tagGroupsCRUD.getAsync("http://localhost/phpAPI/api.php/tagGroups/" + userId, appendGroupsAsOption); 
+	tagGroupsCRUD.getAsync(basePath + "/api.php/tagGroups/" + userId, appendGroupsAsOption); 
 }
 function addTagGroup(json){
-	tagGroupsCRUD.addAsync("http://localhost/phpAPI/api.php/insertTagGroup", json, getTagGroupsForUserAsync(4));
+	tagGroupsCRUD.addAsync(basePath + "/api.php/insertTagGroup", json, getTagGroupsForUserAsync(4));
 	
 }
 function updateTagGroup(json){
-	tagGroupsCRUD.updateAsync("http://localhost/phpAPI/api.php/updateTagGroup", json, getTagGroupsForUserAsync(4));
+	tagGroupsCRUD.updateAsync(basePath + "/api.php/updateTagGroup", json, getTagGroupsForUserAsync(4));
 }
 function deleteTagGroup(id){
-	tagGroupsCRUD.deleteAsync("http://localhost/phpAPI/api.php/deleteTagGroup/" + id, getTagGroupsForUserAsync(4));
+	tagGroupsCRUD.deleteAsync(basePath + "/api.php/deleteTagGroup/" + id, getTagGroupsForUserAsync(4));
 }
 
 function getGroupByName(name){
-	tagGroupsCRUD.getAsync("http://localhost/phpAPI/api.php/tagGroupByName/" + name, appendGroupsAsOption); 
+	tagGroupsCRUD.getAsync(basePath + "/api.php/tagGroupByName/" + name, appendGroupsAsOption); 
 }
 
 function appendGroupsAsOption(group){
